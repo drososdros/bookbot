@@ -1,13 +1,12 @@
-from stats import count_letters, count_text_words
+from stats import count_letters, count_text_words, stats_report
 
 
 def main():
     frank = "books/frankenstein.txt"
     book = get_book_text(frank)
-    print(f"{count_text_words(book)} words found in the document")
+    words = count_text_words(book)
     letters = count_letters(book)
-    for letter, occurrences in letters.items():
-        print(f"'{letter}': {occurrences}")
+    stats_report(words, letters)
 
 
 def get_book_text(path):

@@ -11,3 +11,20 @@ def count_letters(book):
         else:
             letter_occurrences[l_letter] = 1
     return letter_occurrences
+
+
+def stats_report(text_words, count_letters):
+    print(
+        """
+============ BOOKBOT ============
+Analyzing book found at books/frankenstein.txt...
+----------- Word Count ----------
+"""
+    )
+    print(f"Found {text_words} total words")
+    print("--------- Character Count -------")
+    for key in sorted(count_letters):
+        if key.isalpha():
+            print(f"{key}: {count_letters[key]}")
+
+    print("============= END ===============")
